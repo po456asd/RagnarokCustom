@@ -1,6 +1,6 @@
 
-require "AI\\Const"
-require "AI\\Util"					
+require "./AI/Const.lua"
+require "./AI/Util.lua"					
 
 -----------------------------
 -- state
@@ -595,7 +595,7 @@ function	GetMyEnemy (myid)
 
 	local type = GetV (V_HOMUNTYPE,myid)
 	if (type == LIF or type == LIF_H or type == AMISTR or type == AMISTR_H or type == LIF2 or type == LIF_H2 or type == AMISTR2 or type == AMISTR_H2) then
-		result = GetMyEnemyB (myid)	
+		result = GetMyEnemyA (myid)
 	elseif (type == FILIR or type == FILIR_H or type == VANILMIRTH or type == VANILMIRTH_H or type == FILIR2 or type == FILIR_H2 or type == VANILMIRTH2 or type == VANILMIRTH_H2) then
 		result = GetMyEnemyB (myid)
 	end
@@ -608,16 +608,17 @@ end
 -------------------------------------------
 --  비선공형 GetMyEnemy
 -------------------------------------------
-function	GetMyEnemyB (myid)
+function	GetMyEnemyA (myid)
 	local result = 0
 	local owner  = GetV (V_OWNER,myid)
 	local actors = GetActors ()
 	local enemys = {}
 	local index = 1
-	local type
+	local target
 	for i,v in ipairs(actors) do
 		if (v ~= owner and v ~= myid) then
-			if (1 == IsMonster(v))	then
+			target = GetV (V_TARGET,v)
+			if (target == myid) then
 				enemys[index] = v
 				index = index+1
 			end

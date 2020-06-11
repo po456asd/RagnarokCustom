@@ -1,6 +1,6 @@
 
-require "AI\\Const"
-require "AI\\Util"
+require "./AI/Const.lua"
+require "./AI/Util.lua"					
 
 -----------------------------
 -- state
