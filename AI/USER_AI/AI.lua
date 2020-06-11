@@ -614,11 +614,10 @@ function	GetMyEnemyA (myid)
 	local actors = GetActors ()
 	local enemys = {}
 	local index = 1
-	local target
+	local type
 	for i,v in ipairs(actors) do
 		if (v ~= owner and v ~= myid) then
-			target = GetV (V_TARGET,v)
-			if (target == myid) then
+			if (1 == IsMonster(v))	then
 				enemys[index] = v
 				index = index+1
 			end
