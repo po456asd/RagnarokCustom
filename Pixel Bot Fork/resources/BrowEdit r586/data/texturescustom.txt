@@ -1,0 +1,2 @@
+E:\Program Files (x86)\Gravity Game Tech\RagnarokOnline - Copy\data\texture\WINGWING.bmp
+custom/event\WINGWING.bmp|event\WINGWING.bmp

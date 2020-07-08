@@ -1,0 +1,55 @@
+Info: [04:01:27] //////////////////////////////////////////////////////////////
+Info: [04:01:27] //     ____                    ______    _ _ _              //
+Info: [04:01:27] //    |  _ \                  |  ____|  | (_) |             //
+Info: [04:01:27] //    | |_) |_ __ _____      _| |__   __| |_| |_            //
+Info: [04:01:27] //    |  _ <| '__/ _ \ \ /\ / /  __| / _` | | __|           //
+Info: [04:01:27] //    | |_) | | | (_) \ V  V /| |___| (_| | | |_            //
+Info: [04:01:27] //    |____/|_|  \___/ \_/\_/ |______\__,_|_|\__|	     //
+Info: [04:01:27] //                                                          //
+Info: [04:01:27] //                   Coded by:      Borf                    //
+Info: [04:01:27] //                   Fixes by:      Henko                   //
+Info: [04:01:27] //                                                          //
+Info: [04:01:27] //                     Libraries used:                      //
+Info: [04:01:27] //            - OpenGL                                      //
+Info: [04:01:27] //            - SDL                                         //
+Info: [04:01:27] //            - zlib                                        //
+Info: [04:01:27] //            - gd2                                         //
+Info: [04:01:27] //            - (win)sockets                                //
+Info: [04:01:27] //                                                          //
+Info: [04:01:27] //////////////////////////////////////////////////////////////
+Info: [04:01:27] 
+Info: [04:01:27] 
+Info: [04:01:27]        Public Beta Release, don't bug about any bugs...
+Info: [04:01:27]        Version 586
+Info: [04:01:27] 
+Info: [04:01:28] FS: Done reading grf  E:\Program Files (x86)\Gravity Game Tech\RagnarokOnline - Copy\data.grf
+Info: [04:01:28] Initializing Graphics
+Info: [04:01:29] Opening general textures
+Info: [04:01:29] Loading font data/fonts/tahoma.tga
+Info: [04:01:29] Done loading font data/fonts/tahoma.tga
+Info: [04:01:29] Initializing WM
+Info: [04:01:29] Loading font data/fonts/tahoma.tga
+Info: [04:01:29] Done loading font data/fonts/tahoma.tga
+Info: [04:01:29] Window Manager initialized
+Info: [04:01:29] Loading plugin: '3ds2rsm.dll'
+Info: [04:01:29] Loading plugin: 'clearmap.dll'
+Info: [04:01:29] Loading plugin: 'gat.dll'
+Info: [04:01:29] Loading plugin: 'generators.dll'
+Info: [04:01:29] Loading plugin: 'lightmap.dll'
+Info: [04:01:29] Loading file data/keymap.txt
+Info: [04:01:29] Done Loading file data/keymap.txt
+Info: [04:01:29] Loading file data/effects.txt
+Info: [04:01:29] Done Loading file data/effects.txt
+Info: [04:01:29] Done Initializing
+Info: [04:01:37] World: Loading E:\Program Files (x86)\Gravity Game Tech\RagnarokOnline - Copy\data\yuno_fild08.gnd
+Info: [04:01:37] World: Done loading gnd
+Info: [04:01:37] World: Loading E:\Program Files (x86)\Gravity Game Tech\RagnarokOnline - Copy\data\yuno_fild08.rsw
+Info: [04:01:37] World: Done loading E:\Program Files (x86)\Gravity Game Tech\RagnarokOnline - Copy\data\yuno_fild08.rsw
+Info: [04:01:37] World: Loading E:\Program Files (x86)\Gravity Game Tech\RagnarokOnline - Copy\data\yuno_fild08.gat
+Info: [04:01:37] World: Done loading E:\Program Files (x86)\Gravity Game Tech\RagnarokOnline - Copy\data\yuno_fild08.gat
+Info: [04:01:37] World: Done loading E:\Program Files (x86)\Gravity Game Tech\RagnarokOnline - Copy\data\yuno_fild08
+Info: [04:01:40] Selected Node RO
+Info: [04:04:10] World: 40001 tiles are used
+Info: [04:04:10] World: 40068 tiles left
+Info: [04:04:10] World: 0 models written
+Info: [04:04:14] TextureCache: No textures left (that's a good thing when you're closing down)
