@@ -120,6 +120,7 @@ Func Battle()
 					Sleep(100)
 					MouseClick("Primary", $MOBS1[0] + 25, $MOBS1[1] + 25, 3, 0)
 					$ANTISTRUCK = $ANTISTRUCK + 1
+					$WALKTOTELE = 0
 					If $ANTISTRUCK = $STRUCKINPUT Then
 						Call("Teleportantistruck")
 					EndIf
@@ -129,6 +130,7 @@ Func Battle()
 						Sleep(100)
 						MouseClick("Primary", $MOBS[0] + 25, $MOBS[1] + 25, 3, 0)
 						$ANTISTRUCK = $ANTISTRUCK + 1
+						$WALKTOTELE = 0
 						If $ANTISTRUCK = $STRUCKINPUT Then
 							Call("Teleportantistruck")
 						EndIf
@@ -138,6 +140,7 @@ Func Battle()
 							Sleep(100)
 							MouseClick("Primary", $MOBS2[0] + 25, $MOBS2[1] + 25, 3, 0)
 							$ANTISTRUCK = $ANTISTRUCK + 1
+							$WALKTOTELE = 0
 							If $ANTISTRUCK = $STRUCKINPUT Then
 								Call("Teleportantistruck")
 							EndIf
@@ -147,6 +150,7 @@ Func Battle()
 								Sleep(100)
 								MouseClick("Primary", $MOBS3[0] + 25, $MOBS3[1] + 25, 3, 0)
 								$ANTISTRUCK = $ANTISTRUCK + 1
+								$WALKTOTELE = 0
 								If $ANTISTRUCK = $STRUCKINPUT Then
 									Call("Teleportantistruck")
 								EndIf
@@ -156,6 +160,7 @@ Func Battle()
 									Sleep(100)
 									MouseClick("Primary", $MOBS4[0] + 25, $MOBS4[1] + 25, 3, 0)
 									$ANTISTRUCK = $ANTISTRUCK + 1
+									$WALKTOTELE = 0
 									If $ANTISTRUCK = $STRUCKINPUT Then
 										Call("Teleportantistruck")
 									EndIf
@@ -165,6 +170,7 @@ Func Battle()
 										Sleep(100)
 										MouseClick("Primary", $MOBS5[0] + 25, $MOBS5[1] + 25, 3, 0)
 										$ANTISTRUCK = $ANTISTRUCK + 1
+										$WALKTOTELE = 0
 										If $ANTISTRUCK = $STRUCKINPUT Then
 											Call("Teleportantistruck")
 										EndIf
@@ -174,6 +180,7 @@ Func Battle()
 											Sleep(100)
 											MouseClick("Primary", $MOBS6[0] + 25, $MOBS6[1] + 25, 3, 0)
 											$ANTISTRUCK = $ANTISTRUCK + 1
+											$WALKTOTELE = 0
 											If $ANTISTRUCK = $STRUCKINPUT Then
 												Call("Teleportantistruck")
 											EndIf
@@ -183,6 +190,7 @@ Func Battle()
 												Sleep(100)
 												MouseClick("Primary", $MOBS7[0] + 25, $MOBS7[1] + 25, 3, 0)
 												$ANTISTRUCK = $ANTISTRUCK + 1
+												$WALKTOTELE = 0
 												If $ANTISTRUCK = $STRUCKINPUT Then
 													Call("Teleportantistruck")
 												EndIf
