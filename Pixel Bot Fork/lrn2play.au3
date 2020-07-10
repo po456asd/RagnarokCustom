@@ -39,7 +39,7 @@ $btnStop = GUICtrlCreateButton("Stop (INSERT)", 184, 216, 113, 41, $WS_GROUP)
 $Output = GUICtrlCreateLabel("", 8, 56, 4, 4)
 $Label1 = GUICtrlCreateLabel("lrn2play", 120, 8, 119, 46)
 GUICtrlSetFont(-1, 26, 400, 0, "Calibri")
-$Label2 = GUICtrlCreateLabel("v1.0", 128, 56, 102, 17)
+$Label2 = GUICtrlCreateLabel("v1.1 +Check HP", 128, 56, 102, 17)
 GUICtrlSetFont(-1, 8, 400, 0, "Calibri")
 $PWTextBox = GUICtrlCreateInput("", 72, 96, 121, 21, $ES_PASSWORD)
 $Teleport = GUICtrlCreateGroup("Teleport", 216, 80, 121, 121)
@@ -97,11 +97,12 @@ EndFunc   ;==>Start
 Func Battle()
 	Call("Potion")
 	WinActivate("Ragnarok")
-	$DISCONNECT = PixelSearch(0, 0, @DesktopWidth, @DesktopHeight, 10872642)
-	If IsArray($DISCONNECT) Then
-		MouseClick("Primary", $DISCONNECT[0] + 0, $DISCONNECT[1] + 0, 5, 0)
-		Sleep(100)
-	Else
+	
+;	$DISCONNECT = PixelSearch(0, 0, @DesktopWidth, @DesktopHeight, 10872642)
+;	If IsArray($DISCONNECT) Then
+;		MouseClick("Primary", $DISCONNECT[0] + 0, $DISCONNECT[1] + 0, 5, 0)
+;		Sleep(100)
+;	Else
 		$Teleport1 = PixelSearch(0, 200, 730, 600, 0xee22aa, 10) ; Teleport From Monster
 		If IsArray($Teleport1) Then
 			$ANTISTRUCK = $ANTISTRUCK + 99999
@@ -109,99 +110,104 @@ Func Battle()
 				Call("Teleportantistruck")
 			EndIf
 		Else
-			$LOOTER2 = PixelSearch(250, 230, 550, 470, 0x6e2da7, 5) ; PickUp Item
-			If IsArray($LOOTER2) Then
-				Sleep(100)
-				MouseClick("Primary", $LOOTER2[0] + 20, $LOOTER2[1] + 20, 5, 0)
-				$ANTISTRUCK = 0
+			$POTION = PixelSearch(360, 325, 430, 350, 0xd72022, 5) ; Use Potion
+			If IsArray($POTION) Then
+				Call("Potion")
 			Else
-				$MOBS1 = PixelSearch(358, 259, 451, 366, 0xff0000, 5) ; Attack Monster
-				If IsArray($MOBS1) Then
+				$LOOTER2 = PixelSearch(250, 230, 550, 470, 0x6e2da7, 5) ; PickUp Item
+				If IsArray($LOOTER2) Then
 					Sleep(100)
-					MouseClick("Primary", $MOBS1[0] + 25, $MOBS1[1] + 25, 3, 0)
-					$ANTISTRUCK = $ANTISTRUCK + 1
-					$WALKTOTELE = 0
-					If $ANTISTRUCK = $STRUCKINPUT Then
-						Call("Teleportantistruck")
-					EndIf
+					MouseClick("Primary", $LOOTER2[0] + 20, $LOOTER2[1] + 20, 5, 0)
+					$ANTISTRUCK = 0
 				Else
-					$MOBS = PixelSearch(188, 227, 309, 458, 0xff0000, 5)
-					If IsArray($MOBS) Then
+					$MOBS1 = PixelSearch(358, 259, 451, 366, 0xff0000, 5) ; Attack Monster
+					If IsArray($MOBS1) Then
 						Sleep(100)
-						MouseClick("Primary", $MOBS[0] + 25, $MOBS[1] + 25, 3, 0)
+						MouseClick("Primary", $MOBS1[0] + 25, $MOBS1[1] + 25, 3, 0)
 						$ANTISTRUCK = $ANTISTRUCK + 1
 						$WALKTOTELE = 0
 						If $ANTISTRUCK = $STRUCKINPUT Then
 							Call("Teleportantistruck")
 						EndIf
 					Else
-						$MOBS2 = PixelSearch(195, 212, 342, 597, 0xff0000, 5)
-						If IsArray($MOBS2) Then
+						$MOBS = PixelSearch(188, 227, 309, 458, 0xff0000, 5)
+						If IsArray($MOBS) Then
 							Sleep(100)
-							MouseClick("Primary", $MOBS2[0] + 25, $MOBS2[1] + 25, 3, 0)
+							MouseClick("Primary", $MOBS[0] + 25, $MOBS[1] + 25, 3, 0)
 							$ANTISTRUCK = $ANTISTRUCK + 1
 							$WALKTOTELE = 0
 							If $ANTISTRUCK = $STRUCKINPUT Then
 								Call("Teleportantistruck")
 							EndIf
 						Else
-							$MOBS3 = PixelSearch(354, 361, 445, 592, 0xff0000, 5)
-							If IsArray($MOBS3) Then
+							$MOBS2 = PixelSearch(195, 212, 342, 597, 0xff0000, 5)
+							If IsArray($MOBS2) Then
 								Sleep(100)
-								MouseClick("Primary", $MOBS3[0] + 25, $MOBS3[1] + 25, 3, 0)
+								MouseClick("Primary", $MOBS2[0] + 25, $MOBS2[1] + 25, 3, 0)
 								$ANTISTRUCK = $ANTISTRUCK + 1
 								$WALKTOTELE = 0
 								If $ANTISTRUCK = $STRUCKINPUT Then
 									Call("Teleportantistruck")
 								EndIf
 							Else
-								$MOBS4 = PixelSearch(465, 206, 64, 594, 0xff0000, 5)
-								If IsArray($MOBS4) Then
+								$MOBS3 = PixelSearch(354, 361, 445, 592, 0xff0000, 5)
+								If IsArray($MOBS3) Then
 									Sleep(100)
-									MouseClick("Primary", $MOBS4[0] + 25, $MOBS4[1] + 25, 3, 0)
+									MouseClick("Primary", $MOBS3[0] + 25, $MOBS3[1] + 25, 3, 0)
 									$ANTISTRUCK = $ANTISTRUCK + 1
 									$WALKTOTELE = 0
 									If $ANTISTRUCK = $STRUCKINPUT Then
 										Call("Teleportantistruck")
 									EndIf
 								Else
-									$MOBS5 = PixelSearch(646, 194, 550, 594, 0xff0000, 5)
-									If IsArray($MOBS5) Then
+									$MOBS4 = PixelSearch(465, 206, 64, 594, 0xff0000, 5)
+									If IsArray($MOBS4) Then
 										Sleep(100)
-										MouseClick("Primary", $MOBS5[0] + 25, $MOBS5[1] + 25, 3, 0)
+										MouseClick("Primary", $MOBS4[0] + 25, $MOBS4[1] + 25, 3, 0)
 										$ANTISTRUCK = $ANTISTRUCK + 1
 										$WALKTOTELE = 0
 										If $ANTISTRUCK = $STRUCKINPUT Then
 											Call("Teleportantistruck")
 										EndIf
 									Else
-										$MOBS6 = PixelSearch(248, 73, 500, 257, 0xff0000, 5)
-										If IsArray($MOBS6) Then
+										$MOBS5 = PixelSearch(646, 194, 550, 594, 0xff0000, 5)
+										If IsArray($MOBS5) Then
 											Sleep(100)
-											MouseClick("Primary", $MOBS6[0] + 25, $MOBS6[1] + 25, 3, 0)
+											MouseClick("Primary", $MOBS5[0] + 25, $MOBS5[1] + 25, 3, 0)
 											$ANTISTRUCK = $ANTISTRUCK + 1
 											$WALKTOTELE = 0
 											If $ANTISTRUCK = $STRUCKINPUT Then
 												Call("Teleportantistruck")
 											EndIf
 										Else
-											$MOBS7 = PixelSearch(30, 227, 201, 603, 0xff0000, 5)
-											If IsArray($MOBS7) Then
+											$MOBS6 = PixelSearch(248, 73, 500, 257, 0xff0000, 5)
+											If IsArray($MOBS6) Then
 												Sleep(100)
-												MouseClick("Primary", $MOBS7[0] + 25, $MOBS7[1] + 25, 3, 0)
+												MouseClick("Primary", $MOBS6[0] + 25, $MOBS6[1] + 25, 3, 0)
 												$ANTISTRUCK = $ANTISTRUCK + 1
 												$WALKTOTELE = 0
 												If $ANTISTRUCK = $STRUCKINPUT Then
 													Call("Teleportantistruck")
 												EndIf
 											Else
-												Sleep(100)
-												$LOGINFLAG = PixelSearch(0, 0, @DesktopWidth, @DesktopHeight, 16711812)
-												If IsArray($LOGINFLAG) Then
-													Call("Login")
+												$MOBS7 = PixelSearch(30, 227, 201, 603, 0xff0000, 5)
+												If IsArray($MOBS7) Then
+													Sleep(100)
+													MouseClick("Primary", $MOBS7[0] + 25, $MOBS7[1] + 25, 3, 0)
+													$ANTISTRUCK = $ANTISTRUCK + 1
+													$WALKTOTELE = 0
+													If $ANTISTRUCK = $STRUCKINPUT Then
+														Call("Teleportantistruck")
+													EndIf
 												Else
-													Call("Potion")
-													Call("Walk")
+													Sleep(100)
+													$LOGINFLAG = PixelSearch(0, 0, @DesktopWidth, @DesktopHeight, 16711812)
+													If IsArray($LOGINFLAG) Then
+														Call("Login")
+													Else
+														Call("Potion")
+														Call("Walk")
+													EndIf
 												EndIf
 											EndIf
 										EndIf
@@ -213,12 +219,11 @@ Func Battle()
 				EndIf
 			EndIf
 		EndIf
-	EndIf
+;	EndIf
 EndFunc   ;==>Battle
 
 Func Potion()
-	$HEAL = PixelSearch(0, 0, 137, 78, 13553366)
-	If IsArray($HEAL) Then
+	If IsArray($POTION) Then
 		Send("{F8}")
 		Sleep(150)
 	EndIf
