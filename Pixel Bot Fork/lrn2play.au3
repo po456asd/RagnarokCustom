@@ -39,7 +39,7 @@ $btnStop = GUICtrlCreateButton("Stop (INSERT)", 184, 216, 113, 41, $WS_GROUP)
 $Output = GUICtrlCreateLabel("", 8, 56, 4, 4)
 $Label1 = GUICtrlCreateLabel("lrn2play", 120, 8, 119, 46)
 GUICtrlSetFont(-1, 26, 400, 0, "Calibri")
-$Label2 = GUICtrlCreateLabel("v1.1 +Check HP", 128, 56, 102, 17)
+$Label2 = GUICtrlCreateLabel("v1.2 +Check HP", 128, 56, 102, 17)
 GUICtrlSetFont(-1, 8, 400, 0, "Calibri")
 $PWTextBox = GUICtrlCreateInput("", 72, 96, 121, 21, $ES_PASSWORD)
 $Teleport = GUICtrlCreateGroup("Teleport", 216, 80, 121, 121)
@@ -110,7 +110,7 @@ Func Battle()
 				Call("Teleportantistruck")
 			EndIf
 		Else
-			$POTION = PixelSearch(360, 325, 430, 350, 0xd72022, 5) ; Use Potion
+			$POTION = PixelSearch(360, 325, 430, 350, 0xef1010, 2) ; Use Potion
 			If IsArray($POTION) Then
 				Call("Potion")
 			Else
@@ -223,7 +223,7 @@ Func Battle()
 EndFunc   ;==>Battle
 
 Func Potion()
-	$POTION = PixelSearch(360, 325, 430, 350, 0xd72022, 5) ; Use Potion
+	$POTION = PixelSearch(360, 325, 430, 350, 0xef1010, 2) ; Use Potion
 	If IsArray($POTION) Then
 		Send("{F8}")
 		Sleep(150)
