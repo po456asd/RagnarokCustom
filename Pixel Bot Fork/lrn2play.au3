@@ -110,7 +110,7 @@ Func Battle()
 				Call("Teleportantistruck")
 			EndIf
 		Else
-			$POTION = PixelSearch(360, 325, 430, 350, 0xd72022, 1) ; Use Potion
+			$POTION = PixelSearch(360, 325, 430, 350, 0xd72022, 5) ; Use Potion
 			If IsArray($POTION) Then
 				Call("Potion")
 			Else
@@ -120,7 +120,7 @@ Func Battle()
 					MouseClick("Primary", $LOOTER2[0] + 20, $LOOTER2[1] + 20, 5, 0)
 					$ANTISTRUCK = 0
 				Else
-					$MOBS1 = PixelSearch(358, 259, 451, 366, 0xff0000, 5) ; Attack Monster
+					$MOBS1 = PixelSearch(358, 259, 451, 366, 0x008700, 1) ; Attack Monster
 					If IsArray($MOBS1) Then
 						Sleep(100)
 						MouseClick("Primary", $MOBS1[0] + 25, $MOBS1[1] + 25, 3, 0)
@@ -130,7 +130,7 @@ Func Battle()
 							Call("Teleportantistruck")
 						EndIf
 					Else
-						$MOBS = PixelSearch(188, 227, 309, 458, 0xff0000, 5)
+						$MOBS = PixelSearch(188, 227, 309, 458, 0x008700, 1)
 						If IsArray($MOBS) Then
 							Sleep(100)
 							MouseClick("Primary", $MOBS[0] + 25, $MOBS[1] + 25, 3, 0)
@@ -140,7 +140,7 @@ Func Battle()
 								Call("Teleportantistruck")
 							EndIf
 						Else
-							$MOBS2 = PixelSearch(195, 212, 342, 597, 0xff0000, 5)
+							$MOBS2 = PixelSearch(195, 212, 342, 597, 0x008700, 1)
 							If IsArray($MOBS2) Then
 								Sleep(100)
 								MouseClick("Primary", $MOBS2[0] + 25, $MOBS2[1] + 25, 3, 0)
@@ -150,7 +150,7 @@ Func Battle()
 									Call("Teleportantistruck")
 								EndIf
 							Else
-								$MOBS3 = PixelSearch(354, 361, 445, 592, 0xff0000, 5)
+								$MOBS3 = PixelSearch(354, 361, 445, 592, 0x008700, 1)
 								If IsArray($MOBS3) Then
 									Sleep(100)
 									MouseClick("Primary", $MOBS3[0] + 25, $MOBS3[1] + 25, 3, 0)
@@ -160,7 +160,7 @@ Func Battle()
 										Call("Teleportantistruck")
 									EndIf
 								Else
-									$MOBS4 = PixelSearch(465, 206, 64, 594, 0xff0000, 5)
+									$MOBS4 = PixelSearch(465, 206, 64, 594, 0x008700, 1)
 									If IsArray($MOBS4) Then
 										Sleep(100)
 										MouseClick("Primary", $MOBS4[0] + 25, $MOBS4[1] + 25, 3, 0)
@@ -170,7 +170,7 @@ Func Battle()
 											Call("Teleportantistruck")
 										EndIf
 									Else
-										$MOBS5 = PixelSearch(646, 194, 550, 594, 0xff0000, 5)
+										$MOBS5 = PixelSearch(646, 194, 550, 594, 0x008700, 1)
 										If IsArray($MOBS5) Then
 											Sleep(100)
 											MouseClick("Primary", $MOBS5[0] + 25, $MOBS5[1] + 25, 3, 0)
@@ -180,7 +180,7 @@ Func Battle()
 												Call("Teleportantistruck")
 											EndIf
 										Else
-											$MOBS6 = PixelSearch(248, 73, 500, 257, 0xff0000, 5)
+											$MOBS6 = PixelSearch(248, 73, 500, 257, 0x008700, 1)
 											If IsArray($MOBS6) Then
 												Sleep(100)
 												MouseClick("Primary", $MOBS6[0] + 25, $MOBS6[1] + 25, 3, 0)
@@ -190,7 +190,7 @@ Func Battle()
 													Call("Teleportantistruck")
 												EndIf
 											Else
-												$MOBS7 = PixelSearch(30, 227, 201, 603, 0xff0000, 5)
+												$MOBS7 = PixelSearch(30, 227, 201, 603, 0x008700, 1)
 												If IsArray($MOBS7) Then
 													Sleep(100)
 													MouseClick("Primary", $MOBS7[0] + 25, $MOBS7[1] + 25, 3, 0)
@@ -223,7 +223,7 @@ Func Battle()
 EndFunc   ;==>Battle
 
 Func Potion()
-	$POTION = PixelSearch(360, 325, 430, 350, 0xd72022, 1) ; Use Potion
+	$POTION = PixelSearch(360, 325, 430, 350, 0xd72022, 5) ; Use Potion
 	If IsArray($POTION) Then
 		Send("{F8}")
 		Sleep(150)
@@ -446,7 +446,7 @@ Func Login()
 		Sleep(500)
 		MouseUp("Primary")
 		Sleep(500)
-		$PINCODE2 = PixelSearch(0, 0, @DesktopWidth, @DesktopHeight, 0xff0000, 5)
+		$PINCODE2 = PixelSearch(0, 0, @DesktopWidth, @DesktopHeight, 0x008700, 1)
 		If IsArray($PINCODE2) Then
 			MouseMove($PINCODE2[0] + 10, $PINCODE2[1] + 10, 5)
 			Sleep(500)
@@ -455,7 +455,7 @@ Func Login()
 			MouseUp("Primary")
 			Sleep(500)
 		EndIf
-		$PINCODE3 = PixelSearch(0, 0, @DesktopWidth, @DesktopHeight, 0xff0000, 5)
+		$PINCODE3 = PixelSearch(0, 0, @DesktopWidth, @DesktopHeight, 0x008700, 1)
 		If IsArray($PINCODE3) Then
 			MouseMove($PINCODE3[0] + 10, $PINCODE3[1] + 10, 5)
 			Sleep(500)
