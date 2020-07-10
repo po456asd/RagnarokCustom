@@ -26,6 +26,7 @@ Global $EMOTICONCOUNT
 
 Global $ANTISTRUCK
 Global $STRUCKINPUT
+Global $POTCOUNTINPUT
 
 Global $WALKFUNC = [WalkUp, WalkDown, WalkLeft, WalkRight, WalkUpperLeft, WalkUpperRight, WalkLowerLeft, WalkLowerRight]
 HotKeySet("{HOME}", "Start")
@@ -37,9 +38,9 @@ $Form1_1 = GUICreate("lrn2play", 354, 279, 320, 169)
 $btnStart = GUICtrlCreateButton("Start (HOME)", 48, 216, 113, 41, $WS_GROUP)
 $btnStop = GUICtrlCreateButton("Stop (INSERT)", 184, 216, 113, 41, $WS_GROUP)
 $Output = GUICtrlCreateLabel("", 8, 56, 4, 4)
-$Label1 = GUICtrlCreateLabel("lrn2play", 120, 8, 119, 46)
+$Label1 = GUICtrlCreateLabel("Placeholder", 95, 8, 200, 46)
 GUICtrlSetFont(-1, 26, 400, 0, "Calibri")
-$Label2 = GUICtrlCreateLabel("v1.2 +Check HP", 128, 56, 102, 17)
+$Label2 = GUICtrlCreateLabel("v1.3 +Potion Count (Untested)", 0, 0, 102, 17)
 GUICtrlSetFont(-1, 8, 400, 0, "Calibri")
 $PWTextBox = GUICtrlCreateInput("", 72, 96, 121, 21, $ES_PASSWORD)
 $Teleport = GUICtrlCreateGroup("Teleport", 216, 80, 121, 121)
@@ -50,12 +51,14 @@ $Label3 = GUICtrlCreateLabel("Walks before Teleport", 224, 104, 109, 17)
 GUICtrlCreateGroup("", -99, -99, 1, 1)
 $WTTextBox = GUICtrlCreateInput("40", 224, 128, 105, 21, $ES_NUMBER)
 $Label4 = GUICtrlCreateLabel("Password", 16, 96, 50, 17)
-
 $EmoteTextBox = GUICtrlCreateInput("999", 104, 120, 89, 21, $ES_NUMBER)
 $EmoteLabel = GUICtrlCreateLabel("Walks to Emote", 16, 128, 79, 17)
 
 $antistrucknumberlebel = GUICtrlCreateLabel("Anti Struck", 16, 152, 79, 17)
 $AntiStruckTextBox = GUICtrlCreateInput("50", 104, 144, 89, 21, $ES_NUMBER)
+
+$PotionCountLebel = GUICtrlCreateLabel("Potion Count", 16, 175, 79, 17)
+$PotionCountTextBox = GUICtrlCreateInput("10", 104, 168, 89, 21, $ES_NUMBER)
 
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
@@ -80,6 +83,8 @@ Func Start()
 	$WALKTOTELEINPUT = GUICtrlRead($WTTextBox)
 	$EMOTEINPUT = GUICtrlRead($EmoteTextBox)
 	$STRUCKINPUT	 = GUICtrlRead($AntiStruckTextBox)
+	$POTCOUNTINPUT		=	GUICtrlRead($PotionCountTextBox)
+	
 	If $STOPPED = 1 Then
 		While $STOPPED = 1
 			If WinExists("Ragnarok") Then
@@ -227,6 +232,14 @@ Func Potion()
 	If IsArray($POTION) Then
 		Send("{F8}")
 		Sleep(150)
+		$POTIONCOUNT = $POTIONCOUNT + 1
+		IF $POTIONCOUNT > $POTCOUNTINPUT - 1 Then
+			$ANTISTRUCK = $ANTISTRUCK + 99999
+			If $ANTISTRUCK > $STRUCKINPUT then
+				$POTIONCOUNT = 0
+				Call("Teleportantistruck")
+			EndIf
+		EndIf
 	EndIf
 EndFunc   ;==>Potion
 
@@ -248,6 +261,7 @@ Func Teleport()
 			Sleep(1000)
 			$WALKTOTELE = 0
 			$ANTISTRUCK = 0
+			$POTIONCOUNT = 0
 		EndIf
 	Else
 		If $WALKTOTELE > $WALKTOTELEINPUT Then
@@ -258,6 +272,7 @@ Func Teleport()
 			Sleep(2000)
 			$WALKTOTELE = 0
 			$ANTISTRUCK = 0
+			$POTIONCOUNT = 0
 		EndIf
 	EndIf
 EndFunc   ;==>Teleport
@@ -271,6 +286,7 @@ If $ANTISTRUCK > $STRUCKINPUT then
 		Sleep(1000)
 		$WALKTOTELE = 0		
 		$ANTISTRUCK = 0
+		$POTIONCOUNT = 0
 	Else		
 		Sleep(300)
 		Send("{F9}")
@@ -279,6 +295,7 @@ If $ANTISTRUCK > $STRUCKINPUT then
 		Sleep(2000)
 		$WALKTOTELE = 0		
 		$ANTISTRUCK = 0
+		$POTIONCOUNT = 0
 	EndIf
 EndIf
 	
@@ -307,6 +324,7 @@ Func WalkUp()
 		$WALKCOUNT = $WALKCOUNT + 1
 		$WALKTOTELE = $WALKTOTELE + 1
 		$ANTISTRUCK = 0
+		$POTIONCOUNT = 0
 		Call("Teleport")
 	Until $WALKCOUNT = 3
 EndFunc   ;==>WalkUp
@@ -324,6 +342,7 @@ Func WalkDown()
 		$WALKCOUNT = $WALKCOUNT + 1
 		$WALKTOTELE = $WALKTOTELE + 1
 		$ANTISTRUCK = 0
+		$POTIONCOUNT = 0
 		Call("Teleport")
 	Until $WALKCOUNT = 3
 EndFunc   ;==>WalkDown
@@ -341,6 +360,7 @@ Func WalkLeft()
 		$WALKCOUNT = $WALKCOUNT + 1
 		$WALKTOTELE = $WALKTOTELE + 1
 		$ANTISTRUCK = 0
+		$POTIONCOUNT = 0
 		Call("Teleport")
 	Until $WALKCOUNT = 3
 EndFunc   ;==>WalkLeft
@@ -358,6 +378,7 @@ Func WalkRight()
 		$WALKCOUNT = $WALKCOUNT + 1
 		$WALKTOTELE = $WALKTOTELE + 1
 		$ANTISTRUCK = 0
+		$POTIONCOUNT = 0
 		Call("Teleport")
 	Until $WALKCOUNT = 3
 EndFunc   ;==>WalkRight
@@ -375,6 +396,7 @@ Func WalkUpperLeft()
 		$WALKCOUNT = $WALKCOUNT + 1
 		$WALKTOTELE = $WALKTOTELE + 1
 		$ANTISTRUCK = 0
+		$POTIONCOUNT = 0
 		Call("Teleport")
 	Until $WALKCOUNT = 3
 EndFunc   ;==>WalkUpperLeft
@@ -392,6 +414,7 @@ Func WalkUpperRight()
 		$WALKCOUNT = $WALKCOUNT + 1
 		$WALKTOTELE = $WALKTOTELE + 1
 		$ANTISTRUCK = 0
+		$POTIONCOUNT = 0
 		Call("Teleport")
 	Until $WALKCOUNT = 3
 EndFunc   ;==>WalkUpperRight
@@ -409,6 +432,7 @@ Func WalkLowerLeft()
 		$WALKCOUNT = $WALKCOUNT + 1
 		$WALKTOTELE = $WALKTOTELE + 1
 		$ANTISTRUCK = 0
+		$POTIONCOUNT = 0
 		Call("Teleport")
 	Until $WALKCOUNT = 3
 EndFunc   ;==>WalkLowerLeft
@@ -426,6 +450,7 @@ Func WalkLowerRight()
 		$WALKCOUNT = $WALKCOUNT + 1
 		$WALKTOTELE = $WALKTOTELE + 1
 		$ANTISTRUCK = 0
+		$POTIONCOUNT = 0
 		Call("Teleport")
 	Until $WALKCOUNT = 3
 EndFunc   ;==>WalkLowerRight
