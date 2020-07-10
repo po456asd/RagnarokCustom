@@ -110,7 +110,7 @@ Func Battle()
 				Call("Teleportantistruck")
 			EndIf
 		Else
-			$POTION = PixelSearch(360, 325, 430, 350, 0xd72022, 5) ; Use Potion
+			$POTION = PixelSearch(360, 325, 430, 350, 0xd72022, 1) ; Use Potion
 			If IsArray($POTION) Then
 				Call("Potion")
 			Else
@@ -223,8 +223,11 @@ Func Battle()
 EndFunc   ;==>Battle
 
 Func Potion()
-	Send("{F8}")
-	Sleep(150)
+	$POTION = PixelSearch(360, 325, 430, 350, 0xd72022, 1) ; Use Potion
+	If IsArray($POTION) Then
+		Send("{F8}")
+		Sleep(150)
+	EndIf
 EndFunc   ;==>Potion
 
 Func Walk()
