@@ -35,11 +35,11 @@ HotKeySet("{END}", "_Exit")
 HotKeySet("{INS}", "Stop")
 
 #Region ### START Koda GUI section ###
-$Form1_1 = GUICreate("lrn2play", 354, 279, 320, 169)
+$Form1_1 = GUICreate("Dek Here", 354, 279, 320, 169)
 $btnStart = GUICtrlCreateButton("Start (HOME)", 48, 216, 113, 41, $WS_GROUP)
 $btnStop = GUICtrlCreateButton("Stop (INSERT)", 184, 216, 113, 41, $WS_GROUP)
 $Output = GUICtrlCreateLabel("", 8, 56, 4, 4)
-$Label1 = GUICtrlCreateLabel("Placeholder", 95, 8, 200, 46)
+$Label1 = GUICtrlCreateLabel("เด็กเหี้ย", 140, 8, 200, 46)
 GUICtrlSetFont(-1, 26, 400, 0, "Calibri")
 $Label2 = GUICtrlCreateLabel("v1.3 +Potion Count (Untested)", 0, 0, 102, 17)
 GUICtrlSetFont(-1, 8, 400, 0, "Calibri")
@@ -232,7 +232,7 @@ Func Potion()
 	$POTION = PixelSearch(360, 325, 430, 350, 0xef1010, 2) ; Use Potion
 	If IsArray($POTION) Then
 		Send("{F8}")
-		Sleep(150)
+		Sleep(200)
 		$POTIONCOUNT = $POTIONCOUNT + 1
 		IF $POTIONCOUNT > $POTCOUNTINPUT - 1 Then
 			$ANTISTRUCK = $ANTISTRUCK + 99999
