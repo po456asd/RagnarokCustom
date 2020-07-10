@@ -223,10 +223,8 @@ Func Battle()
 EndFunc   ;==>Battle
 
 Func Potion()
-	If IsArray($POTION) Then
-		Send("{F8}")
-		Sleep(150)
-	EndIf
+	Send("{F8}")
+	Sleep(150)
 EndFunc   ;==>Potion
 
 Func Walk()
@@ -485,4 +483,3 @@ Func Login()
 		EndIf
 	EndIf
 EndFunc   ;==>Login
-
