@@ -27,6 +27,7 @@ Global $EMOTICONCOUNT
 Global $ANTISTRUCK
 Global $STRUCKINPUT
 Global $POTCOUNTINPUT
+Global $POTIONCOUNT
 
 Global $WALKFUNC = [WalkUp, WalkDown, WalkLeft, WalkRight, WalkUpperLeft, WalkUpperRight, WalkLowerLeft, WalkLowerRight]
 HotKeySet("{HOME}", "Start")
